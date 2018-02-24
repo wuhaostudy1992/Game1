@@ -132,14 +132,14 @@ def update_aliens(ai_settings, stats, screen, ship, aliens, bullets):
 	aliens.update()
 	
 	#look for alien-ship collisions.
-	if pygame.sprite.spritecollideany(ship, aliens):
+	#if pygame.sprite.spritecollideany(ship, aliens):
 		###do something
 	
 def check_bulllet_alien_collisions(ai_settings, screen, ship, aliens, bullets):
-	'''Respond to bullet-alien collisions.'''
-	#Remove any bullets and aliens that have collided.
-	collisions = pygame.sprite.groupcollide(bullets, aliens, True, True)
-	if len(aliens) == 0:
-		#Destory existing bullets and create new fleet
-		bullets.empty()
-		create_fleet(ai_settings, screen, ship, aliens)
+    '''Respond to bullet-alien collisions.'''
+    #Remove any bullets and aliens that have collided.
+    collisions = pygame.sprite.groupcollide(bullets, aliens, True, True)
+    if len(aliens) == 0:
+        #Destory existing bullets and create new fleet
+        bullets.empty()
+        create_fleet(ai_settings, screen, ship, aliens)
